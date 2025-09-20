@@ -36,7 +36,7 @@ function Home(){
     // if the flag for a pe
     <div>
 
-      //Scam Messages
+      
       <Link to="/messages">
         <div>
           <h3>
@@ -46,7 +46,7 @@ function Home(){
         </div>
       </Link>
 
-      //Phishing
+      
       <Link to="/phishing">
         <div>
           <h3>
@@ -56,7 +56,7 @@ function Home(){
         </div>
       </Link>
       
-      //Social Media
+      
       <Link to="/social">
         <div>
           <h3>
@@ -66,7 +66,7 @@ function Home(){
         </div>
       </Link>
 
-      //Fake News and Misinformation
+      
       <Link to="/social">
         <div>
           <h3>
