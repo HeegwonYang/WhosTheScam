@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import msgLogo from './assets/chat-bubble-user-svgrepo-com.svg'
 import phishLogo from './assets/fishing-hook-3-svgrepo-com.svg'
 import socialLogo from './assets/social-media-cloud-svgrepo-com.svg'
+import newsLogo from './assets/news-4301.svg'
 import './App.css'
 
 function Start(){
@@ -34,36 +35,44 @@ function Home(){
 
     // if the flag for a pe
     <div>
+
+      
       <Link to="/messages">
         <div>
-        <h3>
+          <h3>
             <img src={msgLogo} className="msg logo" alt="scam messages logo" />
-        Scam Messages</h3>
+            Scam Messages
+          </h3>
         </div>
       </Link>
+
+      
       <Link to="/phishing">
         <div>
           <h3>
             <img src={phishLogo} className="phish logo" alt="Phishing logo" />
-          Phishing
+            Phishing
+          </h3> 
+        </div>
+      </Link>
+      
+      
+      <Link to="/social">
+        <div>
+          <h3>
+            <img src={socialLogo} className="social logo" alt="social media logo" />
+            Social Media Scams
+            </h3>
+        </div>
+      </Link>
+
+      
+      <Link to="/social">
+        <div>
+          <h3>
+            <img src={newsLogo} className="social logo" alt="social media logo" />
+            Fake News & Misinformation
           </h3>
-          
-        </div>
-      </Link>
-      <Link to="/social">
-        <div>
-        <h3>
-        <img src={socialLogo} className="social logo" alt="social media logo" />
-        Social Media Scams
-        </h3>
-        </div>
-      </Link>
-      <Link to="/social">
-        <div>
-        <h3>
-        <img src={socialLogo} className="social logo" alt="social media logo" />
-        Fake News & Misinformation
-        </h3>
         </div>
       </Link>
 
