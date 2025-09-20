@@ -3,7 +3,6 @@ from os.path import join
 from pydoc import text
 from google.genai import Client
 from utils import get_model_response
-from AdItem import AdItem
 from fastapi import FastAPI
 
 app = FastAPI()
