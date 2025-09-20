@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import msgLogo from './assets/chat-bubble-user-svgrepo-com.svg'
 import phishLogo from './assets/fishing-hook-3-svgrepo-com.svg'
 import './App.css'

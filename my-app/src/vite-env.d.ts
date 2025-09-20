@@ -1,5 +1,7 @@
 /// <reference types="vite/client" />
 
+SKIP_PREFLIGHT_CHECK=true
+
 declare module '*.css' {
       interface IClassNames {
         [className: string]: string
@@ -16,6 +18,11 @@ declare module "*.svg" {
     }
 
 declare module "*.png" {
+      const value: string;
+      export default value;
+    }
+
+declare module "*.jpg" {
       const value: string;
       export default value;
     }
