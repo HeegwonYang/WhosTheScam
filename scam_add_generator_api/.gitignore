@@ -1,0 +1,6 @@
+data
+__pycache__
+pinecone*.py
+AdItem.py
+.pytest_cache
+test_*.py

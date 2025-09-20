@@ -1,0 +1,1 @@
+Generate {num_messages} clickbait-y text messages with several red flags for selling items commonly bought.
