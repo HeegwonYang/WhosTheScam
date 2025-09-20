@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import msgLogo from './assets/chat-bubble-user-svgrepo-com.svg'
 import phishLogo from './assets/fishing-hook-3-svgrepo-com.svg'
 import socialLogo from './assets/social-media-cloud-svgrepo-com.svg'
+import instructionsImg from './assets/instructions.png';
+
 import './App.css'
 
 function Start(){
@@ -15,6 +17,12 @@ function Start(){
           interactive environment. With real-world inspired, AI-generated examples, users sharpen their ability
           to recognize fraudulent messages and build confidence in protecting themselves online.
           <br /><br />
+          <img 
+          src={instructionsImg} 
+          alt="Game instructions" 
+          style={{ maxWidth: "500px", width: "100%", height: "auto", display: "block", margin: "2rem auto" }}
+        />
+
           To start, choose a unit you want to play through from the options at the bottom. Then, for each message that
           appears, swipe LEFT if you think the message is a scam, or RIGHT if you think the message is trustworthy.
           If you're stuck, press the Hint button to show common red flags that might be present in the message.
