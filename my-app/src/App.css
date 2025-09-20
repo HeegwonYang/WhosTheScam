@@ -46,9 +46,18 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.card {
+.intro {
   padding: 2em;
   overflow-wrap: normal;
+}
+
+.unitButton {
+  background-color: #d0d0d0;
+  border-radius: 25px;
+}
+
+a {
+  color: inherit;
 }
 
 .read-the-docs {
