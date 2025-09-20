@@ -31,9 +31,11 @@ Earn badges by mastering units and work toward becoming a **Scam Spotter Pro**.
 4. **Scoring** → Each unit has 5 questions:  
    - Get all 5 correct to **earn the badge**.  
    - Retry as many times as needed (messages are randomized).  
-👉 **Prototype Demo:** [View on Figma](https://www.figma.com/proto/pkDc2FRdyqzEyMQoFGqFMD/Scam-Detection-Questions?node-id=29-124&t=S9QawXwQI5ZWh2af-1)
+
+👉 **Prototype of Questions:** [View on Figma](https://www.figma.com/proto/pkDc2FRdyqzEyMQoFGqFMD/Scam-Detection-Questions?node-id=29-124&t=S9QawXwQI5ZWh2af-1)  
 
 ---
+👉 **Wireframe:** [View on Figma](https://www.figma.com/proto/pTbE91qMWJmWwKY29u2KZO/WhosTheScam-Wireframe?node-id=35-0&t=8bbfPtCxQhT66Yf1-1)  
 
 ## 🏆 Rewards  
 - Collect a **badge** for every completed unit.  
