@@ -16,18 +16,21 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Who's the Scammer?</h1>
       <div className="card">
+        <p>
+          "Who's the Scammer?" is a game where you will be presented with five different
+          <br />fictional examples of common scams in real life. To each of these examples,
+          <br />you will be asked to swipe LEFT if you think it's a scam, or RIGHT if it seems trustworthy.
+          <br /><br />
+          Use your best judgement and try to guess correctly for all five!
+        </p> 
         <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+          Let's start!
         </button>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }

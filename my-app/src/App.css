@@ -1,13 +1,15 @@
-/*
-  Based on TailwindCSS recommendations,
-  consider using classes instead of the `@apply` directive
-  @see https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction
-*/
 #root {
-  @apply max-w-screen-xl text-center mx-auto my-0 p-8;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
+
 .logo {
-  @apply h-[6em] will-change-[filter] transition-[filter] duration-300 p-[1.5em];
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
@@ -15,22 +17,27 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+
 @keyframes logo-spin {
   from {
-    @apply rotate-0;
+    transform: rotate(0deg);
   }
   to {
-    @apply rotate-[360deg];
+    transform: rotate(360deg);
   }
 }
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    @apply animate-[logo-spin_infinite_20s_linear];
+    animation: logo-spin infinite 20s linear;
   }
 }
+
 .card {
-  @apply p-[2em];
+  padding: 2em;
+  overflow-wrap: normal;
 }
+
 .read-the-docs {
-  @apply text-[#888];
+  color: #888;
 }
