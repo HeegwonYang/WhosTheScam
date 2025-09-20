@@ -9,8 +9,8 @@ import './App.css'
 function Start(){
   return (
     <>
-      <h1>Scam Spotter</h1>
       <div className="intro">
+        <h1>Scam Spotter</h1>
         <p>
           Scam Spotter is a mobile learning game designed to help adults practice identifying scams in a safe,
           interactive environment. With real-world inspired, AI-generated examples, users sharpen their ability
@@ -31,58 +31,43 @@ function Start(){
 }
 
 function Home(){
-  return(
-
-    // if the flag for a pe
-    <div>
-
-      
+  return (
+    <div className="menu">
       <Link to="/messages">
-        <div>
-          <h3>
-            <img src={msgLogo} className="msg logo" alt="scam messages logo" />
-            Scam Messages
-          </h3>
+        <div className="menu-item">
+          <img src={msgLogo} className="logo" alt="scam messages logo" />
+          <span>Scam Messages</span>
         </div>
       </Link>
 
-      
       <Link to="/phishing">
-        <div>
-          <h3>
-            <img src={phishLogo} className="phish logo" alt="Phishing logo" />
-            Phishing
-          </h3> 
+        <div className="menu-item">
+          <img src={phishLogo} className="logo" alt="phishing logo" />
+          <span>Phishing</span>
         </div>
       </Link>
-      
-      
+
       <Link to="/social">
-        <div>
-          <h3>
-            <img src={socialLogo} className="social logo" alt="social media logo" />
-            Social Media Scams
-            </h3>
+        <div className="menu-item">
+          <img src={socialLogo} className="logo" alt="social media logo" />
+          <span>Social Media Scams</span>
         </div>
       </Link>
 
-      
-      <Link to="/social">
-        <div>
-          <h3>
-            <img src={newsLogo} className="social logo" alt="social media logo" />
-            Fake News & Misinformation
-          </h3>
+      <Link to="/misinfo">
+        <div className="menu-item">
+          <img src={newsLogo} className="logo" alt="fake news logo" />
+          <span>Fake News &amp; Misinformation</span>
         </div>
       </Link>
 
-      <Link to="/">
-        <button>Back</button>
-      </Link>
-
+      <div className="menu-footer">
+        <Link to="/"><button>Back</button></Link>
+      </div>
     </div>
   )
 }
+
 
 function Messages(){
   return <h1>placeholder for messages</h1>

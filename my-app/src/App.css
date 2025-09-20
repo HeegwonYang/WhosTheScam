@@ -3,9 +3,36 @@
   margin: 0 auto;
   padding: 2rem;
   font-size: large;
+  /*text-align: center;*/
+}
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* horizontal center */
   text-align: center;
 }
-
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical center */
+  align-items: flex-start;   /* left align */
+  min-height: 100vh;         /* take full screen height */
+  padding-left: 2rem;        /* spacing from left edge */
+}
+.menu-item {
+  display: flex;
+  align-items: center;       /* aligns icon and text vertically */
+  gap: 1rem;                 /* space between icon and text */
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.menu-footer {
+  margin-top: 2 rem;          /* push to bottom */
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  width: 100%;               /* <-- ensures it spans full width */
+}
 .logo {
   height: 3em;
   padding: 1.5em;
