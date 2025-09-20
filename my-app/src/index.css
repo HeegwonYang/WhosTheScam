@@ -1,11 +1,18 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --bg-color: #121212;
+  --surface-color: #1E1E1E;
+  --primary-color: #00BFFF;
+  --accent-color: #39FF14;
+  --text-color: #E0E0E0;
+  --secondary-text-color: #AAAAAA;
+  --warning-color: #FF1744;
+  font-family: "Orbitron", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+  color: var(--text-color);
+  background-color: var(--bg-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -27,6 +34,8 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   min-width: 320px;
   min-height: 100vh;
 }
@@ -38,17 +47,22 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 2px solid var(--primary-color);
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 600;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: transparent;
+  color: var(--primary-color);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px var(--primary-color);
 }
+
 button:hover {
-  border-color: #646cff;
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  box-shadow: 0 0 20px var(--primary-color);
 }
 button:focus,
 button:focus-visible {
