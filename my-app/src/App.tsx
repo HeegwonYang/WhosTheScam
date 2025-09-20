@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import msgLogo from './assets/chat-bubble-user-svgrepo-com.svg'
 import phishLogo from './assets/fishing-hook-3-svgrepo-com.svg'
+import socialLogo from './assets/social-media-cloud-svgrepo-com.svg'
 import './App.css'
 
 function Start(){
@@ -41,16 +42,35 @@ function Home(){
         </div>
       </Link>
       <Link to="/phishing">
-      <div>
-        <h3>
-          <img src={phishLogo} className="phish logo" alt="Phishing logo" />
-        Phishing
-        </h3>
-      </div>
+        <div>
+          <h3>
+            <img src={phishLogo} className="phish logo" alt="Phishing logo" />
+          Phishing
+          </h3>
           
+        </div>
       </Link>
-      <Link to="/social"><button>Social Media Scams</button></Link>
-      <Link to="/misinfo"><button>Fake News & Misinformation </button></Link>
+      <Link to="/social">
+        <div>
+        <h3>
+        <img src={socialLogo} className="social logo" alt="social media logo" />
+        Social Media Scams
+        </h3>
+        </div>
+      </Link>
+      <Link to="/social">
+        <div>
+        <h3>
+        <img src={socialLogo} className="social logo" alt="social media logo" />
+        Fake News & Misinformation
+        </h3>
+        </div>
+      </Link>
+
+      <Link to="/">
+        <button>Back</button>
+      </Link>
+
     </div>
   )
 }
