@@ -38,9 +38,10 @@
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+  filter: brightness(0) saturate(100%) invert(51%) sepia(91%) saturate(2224%) hue-rotate(164deg) brightness(107%) contrast(103%);
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: brightness(0) saturate(100%) invert(78%) sepia(66%) saturate(2583%) hue-rotate(59deg) brightness(103%) contrast(115%);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
@@ -51,10 +52,15 @@
   overflow-wrap: normal;
 }
 
-.unitButton {
-  background-color: #d0d0d0;
+.menu-item {
+  background-color: #0;
   border-radius: 25px;
 }
+
+.menu-item.img{
+  filter: brightness(0) saturate(100%) invert(51%) sepia(91%) saturate(2224%) hue-rotate(164deg) brightness(107%) contrast(103%);
+}
+
 
 a {
   color: inherit;
