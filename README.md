@@ -1,6 +1,7 @@
 # Scam Spotter 🕹️  
 *A mobile game for learning how to identify scams*  
 
+[Play here](https://whos-the-scam.vercel.app/home)
 ---
 
 ## 📖 Overview  
