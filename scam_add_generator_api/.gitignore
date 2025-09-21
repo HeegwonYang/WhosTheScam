@@ -4,3 +4,5 @@ pinecone*.py
 AdItem.py
 .pytest_cache
 test_*.py
+student_scores
+studnet_answers
