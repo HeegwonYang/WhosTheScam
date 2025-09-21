@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import msgLogo from './assets/chat-bubble-user-svgrepo-com.svg'
 import phishLogo from './assets/fishing-hook-3-svgrepo-com.svg'
 import socialLogo from './assets/social-media-cloud-svgrepo-com.svg'
+import newsLogo from './assets/news-4301.svg'
 import instructionsImg from './assets/instructions.png';
-
 import './App.css'
 
 function Start(){
@@ -42,32 +42,33 @@ function Home(){
   return (
     <div className="menu">
       <Link to="/messages">
-      <div className="menu-item">
-        <img src={msgLogo} className="logo" alt="scam messages logo" />
-        <span>Scam Messages</span>
-      </div>
-    </Link>
+        <div className="menu-item">
+          <img src={msgLogo} className="logo" alt="scam messages logo" />
+          <span>Scam Messages</span>
+        </div>
+      </Link>
 
-    <Link to="/phishing">
-      <div className="menu-item">
-        <img src={phishLogo} className="logo" alt="phishing logo" />
-        <span>Phishing</span>
-      </div>
-    </Link>
+      <Link to="/phishing">
+        <div className="menu-item">
+          <img src={phishLogo} className="logo" alt="phishing logo" />
+          <span>Phishing</span>
+        </div>
+      </Link>
 
-    <Link to="/social">
-      <div className="menu-item">
-        <img src={socialLogo} className="logo" alt="social media logo" />
-        <span>Social Media Scams</span>
-      </div>
-    </Link>
+      <Link to="/social">
+        <div className="menu-item">
+          <img src={socialLogo} className="logo" alt="social media logo" />
+          <span>Social Media Scams</span>
+        </div>
+      </Link>
 
-    <Link to="/misinfo">
-      <div className="menu-item">
-        <img src={socialLogo} className="logo" alt="fake news logo" />
-        <span>Fake News &amp; Misinformation</span>
-      </div>
-    </Link>
+      <Link to="/misinfo">
+        <div className="menu-item">
+          <img src={newsLogo} className="logo" alt="fake news logo" />
+          <span>Fake News &amp; Misinformation</span>
+        </div>
+      </Link>
+
       <div className="menu-footer">
         <Link to="/"><button>Back</button></Link>
       </div>
