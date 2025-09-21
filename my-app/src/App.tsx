@@ -1,4 +1,4 @@
-import Question from './Phishing';
+  import Question from './Phishing';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import msgLogo from './assets/chat-bubble-user-svgrepo-com.svg'
 import phishLogo from './assets/fishing-hook-3-svgrepo-com.svg'
