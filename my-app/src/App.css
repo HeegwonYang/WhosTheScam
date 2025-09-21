@@ -239,6 +239,7 @@ h1 {
   font-weight: bold;
   box-shadow: 0 0 12px #FF1744; /* glowRed */
   transition: all 0.3s ease;
+  min-width: 120px;  
 }
 
 .btn.cross:hover {
@@ -253,6 +254,7 @@ h1 {
   font-weight: bold;
   box-shadow: 0 0 12px #39FF14; /* glowGreen */
   transition: all 0.3s ease;
+  min-width: 120px; 
 }
 
 .btn.check:hover {
