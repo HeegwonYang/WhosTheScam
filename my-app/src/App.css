@@ -53,7 +53,7 @@
 }
 
 .menu-item {
-  background-color: #0;
+  background-color: #000;
   border-radius: 25px;
 }
 
@@ -114,4 +114,47 @@ h1 {
   margin-top: 1.5rem;
   width: 100%;              /* make row stretch full width */
 }
+
+.score {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: cyan;
+  text-shadow: 0 0 6px cyan;
+}
+
+.end-screen {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.badge {
+  font-size: 1.5rem;
+  color: gold;
+  text-shadow: 0 0 10px gold;
+  font-weight: bold;
+}
+.end-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.retry-btn {
+  border: 2px solid #ff5555;
+  color: #ff5555;
+  background: transparent;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 8px #ff5555;
+  transition: all 0.3s ease;
+}
+
+.retry-btn:hover {
+  background: #ff5555;
+  color: #121212;
+  box-shadow: 0 0 12px #ff5555;
+}
+
 
