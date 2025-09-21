@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const phishingQuestions = [
+let phishingQuestions = [
   {
     id: 1,
     type: "email",
@@ -15,34 +15,29 @@ const phishingQuestions = [
   },
   {
     id: 2,
-    type: "sms",
-    body: "📦 USPS: A parcel could not be delivered due to invalid ZIP code. Confirm details here: usps-delivery.vip",
-    correct: "scam",
-  },
-  {
-    id: 3,
     type: "email",
     from: "Bank Security <alerts@bank-secure.net>",
-    subject: "Your account has been locked",
-    body: "We noticed unusual activity in your account. Please log in here to verify your identity: http://secure-bank-login.net",
-    correct: "scam",
-  },
-  {
-    id: 4,
-    type: "sms",
-    body: "👤 Someone tried to sign in to your account. Was this you? Reset here: suspicious-login-alert.io",
-    correct: "scam",
-  },
-  {
-    id: 5,
-    type: "email",
-    from: "Rewards Center <claim@prizes.org>",
-    subject: "🎉 Congratulations! You’ve won a $500 gift card!",
-    body: "Claim your gift card now by clicking here: gift-prizes.org",
-    correct: "scam",
-  },
+    subject: "Confirmation code sent to the app",
+    body: "We noticed unusual activity in your account. Go into your BankSecure app and enter the following code: 649482",
+    correct: "trustworthy",
+  }
 ];
 
+let scamQuestions =[
+{
+    id: 1,
+    type: "sms",
+    body: "📦 USPS: A parcel could not be delivered due to invalid ZIP code. Confirm details here: usps-delivery.vip",
+    correct: "scam"
+},
+{
+    id: 2,
+    type: "sms",
+    body: "Your order for the Sony WH-1000XM5 headphones has been confirmed. Expected delivery is between Tuesday and Thursday. Thank you for shopping with us!",
+    correct: "trustworthy",
+}
+]
+  
 
 function Question() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -52,6 +47,9 @@ function Question() {
   const [completed, setCompleted] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false); // ✅ lock state
   const { unit } = useParams();
+  
+  const questions = fetch("https://whosthescam.onrender.com/generate_ads/1/1/3");
+
 
   const unitString = () => {
     switch(unit){
