@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Phishing from './Phishing';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import msgLogo from './assets/chat-bubble-user-svgrepo-com.svg'
 import phishLogo from './assets/fishing-hook-3-svgrepo-com.svg'
@@ -80,9 +81,6 @@ function Messages(){
   return <h1>placeholder for messages</h1>
 }
 
-function Phishing(){
-  return <h1>placeholder for phishing</h1>
-}
 
 function Social(){
   return <h1>placeholder for social</h1>
