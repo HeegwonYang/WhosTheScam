@@ -4,7 +4,6 @@ from pydoc import text
 from google.genai import Client
 from utils import get_model_response
 from fastapi import FastAPI
-from mongodb_test import create_mongodb_client_connection
 
 app = FastAPI()
 
@@ -19,21 +18,6 @@ def generate_ads(level=1,sublevel=1,num_messages=10):
     text_messages = get_model_response(model,prompt,system_prompt,client)
     # print(text_messages)
     return text_messages
-
-@app.post("/update_score/{level}/{sublevel}/{score}")
-def update_score(level,sublevel,score):
-    #TODO handle score storage in mongodb
-    client = create_mongodb_client_connection()
-    if client:
-        print(level,sublevel,score)
-
-@app.post("/store_answer_correctness/{level}/{sublevel}/{student_answer}/{correct_answer}")
-def store_answer_correctness(level,sublevel,correct_answer,student_answer):
-    #TODO handle student and correct answers
-    client = create_mongodb_client_connection()
-    if client:
-        print(level,sublevel,correct_answer,student_answer)
-
 
 
 
