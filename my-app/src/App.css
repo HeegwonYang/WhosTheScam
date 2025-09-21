@@ -71,3 +71,32 @@ h1 {
   color: var(--accent-color);
   text-shadow: 0 0 8px var(--accent-color);
 }
+
+.feedback {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--accent-color);
+  text-shadow: 0 0 8px var(--accent-color);
+}
+.message-card {
+  background-color: #1E1E1E;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  color: var(--text-color);
+  box-shadow: 0 0 12px var(--primary-color);
+}
+.button-row {
+  display: flex;
+  justify-content: center;  /* centers horizontally */
+  gap: 2rem;                /* space between buttons */
+  margin-top: 1.5rem;
+  width: 100%;              /* make row stretch full width */
+}
+
