@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Phishing from './Phishing';
+import Question from './Phishing';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import msgLogo from './assets/chat-bubble-user-svgrepo-com.svg'
 import phishLogo from './assets/fishing-hook-3-svgrepo-com.svg'
@@ -46,30 +46,30 @@ function Home(){
         Pick any of the following modules to practice
       </p>
 
-      <Link to="/messages">
+      <Link to="/question/messages">
         <div className="menu-item">
           <img src={msgLogo} className="logo" alt="scam messages logo" />
           <span>Scam Messages</span>
         </div>
       </Link>
       
-      <Link to="/phishing">
+      <Link to="/question/phishing">
         <div className="menu-item">
           <img src={phishLogo} className="logo" alt="phishing logo" />
           <span>Phishing</span>
         </div>
       </Link>
 
-      <Link to="/social">
+      <Link to="/question/social">
         <div className="menu-item">
           <img src={socialLogo} className="logo" alt="social media logo" />
           <span>Social Media Scams</span>
         </div>
       </Link>
 
-      <Link to="/misinfo">
+      <Link to="/question/misinfo">
         <div className="menu-item">
-          <img src={socialLogo} className="logo" alt="fake news logo" />
+          <img src={newsLogo} className="logo" alt="fake news logo" />
           <span>Fake News &amp; Misinformation</span>
         </div>
       </Link>
@@ -83,31 +83,16 @@ function Home(){
 
 
 
-function Messages(){
-  return <h1>placeholder for messages</h1>
-}
-
-
-function Social(){
-  return <h1>placeholder for social</h1>
-}
-function Misinfo(){
-  return <h1>placeholder for misinfo</h1>
-}
 
 
 function App() {
-  const [introCard, displayIntro] = useState(true)
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Start />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/phishing" element={<Phishing />} />
-        <Route path="/social" element={<Social />} />
-        <Route path="/misinfo" element={<Misinfo />} />
+        <Route path="/question/:unit" element={<Question />} />
       </Routes>
     </BrowserRouter>
   )

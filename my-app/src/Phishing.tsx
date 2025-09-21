@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
+import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -43,14 +44,31 @@ const phishingQuestions = [
 ];
 
 
-function Phishing() {
+function Question() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [feedback, setFeedback] = useState<string | null>(null);
   const [cardKey, setCardKey] = useState(0);
   const [score, setScore] = useState(0);
   const [completed, setCompleted] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false); // ✅ lock state
+  const { unit } = useParams();
 
+  const unitString = () => {
+    switch(unit){
+      case "messages":
+        return "Scam Messages";
+      case "phishing":
+        return "Phishing";
+      case "social":
+        return "Social Media Scams";
+      case "misinfo":
+        return "Fake News & Misinformation";
+      default:
+        return "Default";
+    }
+  }
+
+  
   const currentQuestion = phishingQuestions[currentIndex];
 
   const restartGame = () => {
@@ -81,6 +99,8 @@ function Phishing() {
         setCurrentIndex((prev) => prev + 1);
         setCardKey((prev) => prev + 1);
       } else {
+        if (score === phishingQuestions.length){
+        }
         setCompleted(true);
       }
     }, 1200);
@@ -95,7 +115,7 @@ function Phishing() {
 
   return (
     <div className="phishing-container">
-      <h1>Phishing</h1>
+      <h1>{unitString()}</h1>
 
       {!completed && (
         <p className="question-number">
@@ -158,11 +178,11 @@ function Phishing() {
 
       {completed && (
         <div className="end-screen">
-          <h2>🏁 You finished the Phishing section!</h2>
+          <h2>🏁 You finished the {unitString()} section!</h2>
           <p>Your score: {score} / {phishingQuestions.length}</p>
 
           {score === phishingQuestions.length ? (
-            <p className="badge">🏅 Perfect! You earned the Phishing Master badge!</p>
+            <p className="badge">🏅 Perfect! You earned the {unitString()} Master badge!</p>
           ) : (
             <p className="try-again"> Try again to earn the badge!</p>
           )}
@@ -183,4 +203,4 @@ function Phishing() {
   );
 }
 
-export default Phishing;
+export default Question;
