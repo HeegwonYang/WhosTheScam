@@ -64,7 +64,7 @@ function Question() {
       case "misinfo":
         return "Fake News & Misinformation";
       default:
-        return "Default";
+        return "Phishing";
     }
   }
 
