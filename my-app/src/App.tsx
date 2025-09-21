@@ -41,13 +41,18 @@ function Start(){
 function Home(){
   return (
     <div className="menu">
+      <h1 className="menu-title">Cyber Security Units</h1>
+      <p className="menu-instructions">
+        Pick any of the following modules to practice
+      </p>
+
       <Link to="/messages">
         <div className="menu-item">
           <img src={msgLogo} className="logo" alt="scam messages logo" />
           <span>Scam Messages</span>
         </div>
       </Link>
-
+      
       <Link to="/phishing">
         <div className="menu-item">
           <img src={phishLogo} className="logo" alt="phishing logo" />
@@ -64,7 +69,7 @@ function Home(){
 
       <Link to="/misinfo">
         <div className="menu-item">
-          <img src={newsLogo} className="logo" alt="fake news logo" />
+          <img src={socialLogo} className="logo" alt="fake news logo" />
           <span>Fake News &amp; Misinformation</span>
         </div>
       </Link>
@@ -75,6 +80,7 @@ function Home(){
     </div>
   )
 }
+
 
 
 function Messages(){

@@ -4,12 +4,44 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const phishingQuestions = [
-  { id: 1, text: "🚨 You have won a free iPhone! Click this link to claim your prize: scam-link.com", correct: "scam" },
-  { id: 2, text: "⚠️ Your bank account has been locked. Please login here to verify your identity: secure-login-bank.net", correct: "scam" },
-  { id: 3, text: "📦 USPS: A parcel could not be delivered due to invalid ZIP code. Confirm details here: usps-delivery.vip", correct: "scam" },
-  { id: 4, text: "👤 Someone tried to sign in to your account. Was this you? Visit this page to reset: suspicious-login-alert.io", correct: "scam" },
-  { id: 5, text: "🎉 Congratulations! You’ve been selected for a $500 gift card. Claim now at gift-prizes.org", correct: "scam" },
+  {
+    id: 1,
+    type: "email",
+    from: "Amazon Support <support@amazon-fake.com>",
+    subject: "Action required: Return overdue order",
+    body: "You have been fined $85.22 for failing to return Order #23442314. Please log in within 48 hours to pay this fine or apply for a waiver: http://shorturl.scam/amazon",
+    correct: "scam",
+  },
+  {
+    id: 2,
+    type: "sms",
+    body: "📦 USPS: A parcel could not be delivered due to invalid ZIP code. Confirm details here: usps-delivery.vip",
+    correct: "scam",
+  },
+  {
+    id: 3,
+    type: "email",
+    from: "Bank Security <alerts@bank-secure.net>",
+    subject: "Your account has been locked",
+    body: "We noticed unusual activity in your account. Please log in here to verify your identity: http://secure-bank-login.net",
+    correct: "scam",
+  },
+  {
+    id: 4,
+    type: "sms",
+    body: "👤 Someone tried to sign in to your account. Was this you? Reset here: suspicious-login-alert.io",
+    correct: "scam",
+  },
+  {
+    id: 5,
+    type: "email",
+    from: "Rewards Center <claim@prizes.org>",
+    subject: "🎉 Congratulations! You’ve won a $500 gift card!",
+    body: "Claim your gift card now by clicking here: gift-prizes.org",
+    correct: "scam",
+  },
 ];
+
 
 function Phishing() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -69,6 +101,7 @@ function Phishing() {
         <p className="question-number">
           Question {currentIndex + 1} of {phishingQuestions.length}
         </p>
+        
       )}
 
       <AnimatePresence mode="wait">
@@ -81,9 +114,24 @@ function Phishing() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, x: feedback?.includes("scam") ? -200 : 200 }}
             transition={{ duration: 0.6 }}
-          >
-            <p>{currentQuestion.text}</p>
-          </motion.div>
+            >
+            {currentQuestion.type === "email" ? (
+                <>
+                <div className="email-header">
+                    <p><strong>From:</strong> {currentQuestion.from}</p>
+                    <p><strong>Subject:</strong> {currentQuestion.subject}</p>
+                </div>
+                <div className="email-body">
+                    <p>{currentQuestion.body}</p>
+                </div>
+                </>
+            ) : (
+                <div className="sms-body">
+                <p>{currentQuestion.body}</p>
+                </div>
+            )}
+            </motion.div>
+
         )}
       </AnimatePresence>
 
@@ -94,14 +142,14 @@ function Phishing() {
             onClick={() => handleChoice("scam")}
             disabled={isAnswered} // ✅ disable while waiting
           >
-            ✖
+            Unsafe
           </button>
           <button
             className="btn check"
             onClick={() => handleChoice("trustworthy")}
             disabled={isAnswered} // ✅ disable while waiting
           >
-            ✔
+            Safe
           </button>
         </div>
       )}
@@ -116,7 +164,7 @@ function Phishing() {
           {score === phishingQuestions.length ? (
             <p className="badge">🏅 Perfect! You earned the Phishing Master badge!</p>
           ) : (
-            <p className="try-again">🔄 Try again to earn the badge!</p>
+            <p className="try-again"> Try again to earn the badge!</p>
           )}
 
           <div className="end-actions">
