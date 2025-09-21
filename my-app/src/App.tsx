@@ -69,7 +69,7 @@ function Home(){
 
       <Link to="/misinfo">
         <div className="menu-item">
-          <img src={socialLogo} className="logo" alt="fake news logo" />
+          <img src={newsLogo} className="logo" alt="fake news logo" />
           <span>Fake News &amp; Misinformation</span>
         </div>
       </Link>
