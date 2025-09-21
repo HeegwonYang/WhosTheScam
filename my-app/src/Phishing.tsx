@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
-let phishingQuestions = [
+let specificQuestions = [
   {
     id: 1,
     type: "email",
@@ -37,7 +37,45 @@ let scamQuestions =[
     correct: "trustworthy",
 }
 ]
-  
+
+let phishingQuestions = [
+  {
+    id: 1,
+    type: "email",
+    from: "Amazon Support <support@amazon-fake.com>",
+    subject: "Action required: Return overdue order",
+    body: "You have been fined $85.22 for failing to return Order #23442314. Please log in within 48 hours to pay this fine or apply for a waiver: http://shorturl.scam/amazon",
+    correct: "scam",
+  },
+  {
+    id: 2,
+    type: "sms",
+    body: "📦 USPS: A parcel could not be delivered due to invalid ZIP code. Confirm details here: usps-delivery.vip",
+    correct: "scam",
+  },
+  {
+    id: 3,
+    type: "email",
+    from: "Bank Security <alerts@bank-secure.net>",
+    subject: "Your account has been locked",
+    body: "We noticed unusual activity in your account. Please log in here to verify your identity: http://secure-bank-login.net",
+    correct: "scam",
+  },
+  {
+    id: 4,
+    type: "sms",
+    body: "👤 Someone tried to sign in to your account. Was this you? Reset here: suspicious-login-alert.io",
+    correct: "scam",
+  },
+  {
+    id: 5,
+    type: "email",
+    from: "Rewards Center <claim@prizes.org>",
+    subject: "🎉 Congratulations! You’ve won a $500 gift card!",
+    body: "Claim your gift card now by clicking here: gift-prizes.org",
+    correct: "scam",
+  },
+]
 
 function Question() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -47,8 +85,6 @@ function Question() {
   const [completed, setCompleted] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false); // ✅ lock state
   const { unit } = useParams();
-  
-  const questions = fetch("https://whosthescam.onrender.com/generate_ads/1/1/3");
 
 
   const unitString = () => {
