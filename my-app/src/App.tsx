@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Question from './Phishing';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import msgLogo from './assets/chat-bubble-user-svgrepo-com.svg'
