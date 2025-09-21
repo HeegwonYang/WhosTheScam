@@ -1,13 +1,14 @@
-  import Question from './Phishing';
+import QuestionPhishing from './Phishing';
+import MisinfoQuestions from './MisInfo';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import msgLogo from './assets/chat-bubble-user-svgrepo-com.svg'
-import phishLogo from './assets/fishing-hook-3-svgrepo-com.svg'
-import socialLogo from './assets/social-media-cloud-svgrepo-com.svg'
-import newsLogo from './assets/news-4301.svg'
+import msgLogo from './assets/chat-bubble-user-svgrepo-com.svg';
+import phishLogo from './assets/fishing-hook-3-svgrepo-com.svg';
+import socialLogo from './assets/social-media-cloud-svgrepo-com.svg';
+import newsLogo from './assets/news-4301.svg';
 import instructionsImg from './assets/instructions.png';
-import './App.css'
+import './App.css';
 
-function Start(){
+function Start() {
   return (
     <>
       <div className="intro">
@@ -18,11 +19,10 @@ function Start(){
           to recognize fraudulent messages and build confidence in protecting themselves online.
           <br /><br />
           <img 
-          src={instructionsImg} 
-          alt="Game instructions" 
-          style={{ maxWidth: "500px", width: "100%", height: "auto", display: "block", margin: "2rem auto" }}
-        />
-
+            src={instructionsImg} 
+            alt="Game instructions" 
+            style={{ maxWidth: "500px", width: "100%", height: "auto", display: "block", margin: "2rem auto" }}
+          />
           To start, choose a unit you want to play through from the options at the bottom. Then, for each message that
           appears, swipe LEFT if you think the message is a scam, or RIGHT if you think the message is trustworthy.
           If you're stuck, press the Hint button to show common red flags that might be present in the message.
@@ -30,14 +30,12 @@ function Start(){
           Each unit has 5 questions. Get all 5 correct, and you'll earn a badge for that unit!
         </p> 
         <Link to="/home"><button>Let's start!</button></Link>
-        <p>
-        </p>
       </div>
     </>
   )
 }
 
-function Home(){
+function Home() {
   return (
     <div className="menu">
       <h1 className="menu-title">Cyber Security Units</h1>
@@ -80,21 +78,20 @@ function Home(){
   )
 }
 
-
-
-
-
 function App() {
-
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Start />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/question/:unit" element={<Question />} />
+        {/* separate routes for different units */}
+        <Route path="/question/phishing" element={<QuestionPhishing />} />
+        <Route path="/question/misinfo" element={<MisinfoQuestions />} />
+        {/* You can add more later for messages/social */}
+        <Route path="/question/:unit" element={<QuestionPhishing />}/>
       </Routes>
     </BrowserRouter>
   )
 }
 
-export default App
+export default App;
