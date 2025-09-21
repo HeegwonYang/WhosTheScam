@@ -14,19 +14,25 @@ def get_model_chunks(model,prompt,system_prompt,client):
                 )],
                 config=GenerateContentConfig(
                     thinking_config = ThinkingConfig(
-                        thinking_budget=0,
+                        thinking_budget=8192,
                     ),
                     response_mime_type="application/json",
                     response_schema=Schema(
                         type = Type.OBJECT,
-                        required = ["message"],
+                        required = ["bad_messages","good_messages"],
                         properties = {
-                            "message": Schema(
+                            "bad_messages": Schema(
                                 type = Type.ARRAY,
                                 items = Schema(
                                     type = Type.STRING,
                                 ),
                             ),
+                            "good_messages": Schema(
+                                type = Type.ARRAY,
+                                items = Schema(
+                                    type = Type.STRING,
+                                ),
+                            )
                         },
                     ),
                     system_instruction=[
@@ -49,10 +55,14 @@ def get_model_response(model,prompt,system_prompt,client):
     
     
     for chunk in get_model_chunks(model,prompt,system_prompt,client):
-        
-        
-        full_text += chunk.text
+        # print(chunk.text) 
+        if chunk:
+            full_text += chunk.text
     
-    messages = loads(full_text)['message']
-
-    return [msg.format(link = get_suspicious_link()) for msg in messages]
+    messages = loads(full_text)
+    
+    
+    return {
+        "bad_messages": [msg.format(link = get_suspicious_link()) for msg in messages["bad_messages"]],
+        "good_messages": messages["good_messages"]
+    }

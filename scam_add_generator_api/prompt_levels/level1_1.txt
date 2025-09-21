@@ -1,1 +1,17 @@
-Generate {num_messages} clickbait-y text messages with several red flags for selling items commonly bought.
+Your task is to generate a JSON object with two keys: "bad_messages" and "good_messages".
+
+- For the "bad_messages" key, provide a list of {num_messages} text messages that are clickbait-y and exhibit multiple red flags commonly associated with scams for selling popular items. Use the {{link}} placeholder in these messages.
+- For the "good_messages" key, provide a list of {num_messages} text messages that are informative, trustworthy, and completely free of any scam-like red flags. Do not use the {{link}} placeholder in these messages.
+
+Please ensure the final output is a single, valid JSON object. Do not add any text before or after the JSON object. The separation between "good" and "bad" messages is important
+
+Here is an example of the desired output format for num_messages = 1:
+
+{{
+  "bad_messages": [
+    "URGENT: Your account is compromised! Click {{link}} to secure it NOW!"
+  ],
+  "good_messages": [
+    "Your package has been shipped and will arrive in 3-5 business days."
+  ]
+}}
